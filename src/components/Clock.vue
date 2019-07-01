@@ -22,7 +22,6 @@ export default {
     },
     methods: {
         updateTime() {
-            
             var date = new Date();
             this.time = this.addZero(date.getHours(), 2) + ':' + this.addZero(date.getMinutes(), 2) + ':' + this.addZero(date.getSeconds(), 2);
             this.date = this.days[date.getDay()] + ' ' + this.addZero(date.getDate(), 2) + '-' + this.addZero(date.getMonth() + 1, 2) + '-' + this.addZero(date.getFullYear(), 4);

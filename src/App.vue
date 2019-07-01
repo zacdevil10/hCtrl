@@ -33,7 +33,7 @@ body {
 
 <style scoped>
 #clock {
-
+  padding-top: 30vh;
 }
 </style>
 
