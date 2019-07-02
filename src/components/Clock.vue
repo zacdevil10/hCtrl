@@ -44,6 +44,7 @@ p {
 }
 
 #clock {
+    user-select: none;
     color: white;
     text-align: center;
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);

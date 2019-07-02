@@ -5,45 +5,50 @@
     
     <div id="launcher-container" @click="openLauncher = false" v-show="openLauncher">
       <div id="app-launcher" ref="appLauncher" @click.stop="stopPropagation">
-        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <div id="launcher-nav">
+          <i class="material-icons small-material-icons selectable" @click="openLauncher = false">close</i>
+        </div>
+        <div id="app-view">
+          <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='"purple"' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="cloud" :width='buttonWidth' :height='buttonHeight' :tint='"green"' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+          <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='defaultButtonColor' />
+        </div>
       </div>
     </div>
 
     <div id="nav-bar">
-      <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+      <ImageButtonWidget icon="wb_sunny" :width='favButtonWidth' :height='favButtonHeight' :tint='"purple"' />
+      <ImageButtonWidget icon="cloud" :width='buttonWidth' :height='buttonHeight' :tint='"green"' />
+      <ImageButtonWidget icon="highlight" :width='favButtonWidth' :height='favButtonHeight' :tint='"#ff9800"' />
+      <ImageButtonWidget icon="security" :width='favButtonWidth' :height='favButtonHeight' :tint='"#f44336"' />
+      <ImageButtonWidget icon="nature" :width='favButtonWidth' :height='favButtonHeight' :tint='"#ffeb3b"' />
+      <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='favButtonWidth' :height='favButtonHeight' :tint='defaultButtonColor' />
+      <ImageButtonWidget icon="settings" :width='favButtonWidth' :height='favButtonHeight' :tint='"#2196f3"' />
     </div>
   </div>
 </template>
@@ -63,7 +68,9 @@ export default {
   },
   data() {
     return {
-      buttonColor: 'rgba(128,128,128,0.5)',
+      defaultButtonColor: 'rgba(128,128,128,0.5)',
+      favButtonWidth: '10vw',
+      favButtonHeight: '10vw',
       buttonWidth: '10vw',
       buttonHeight: '10vw',
       openLauncher: false
@@ -85,7 +92,7 @@ export default {
   font-weight: normal;
   font-style: normal;
   font-size: 7vw;
-  line-height: 1;
+  line-height: 10vw;
   letter-spacing: normal;
   text-transform: none;
   display: inline-block;
@@ -98,20 +105,30 @@ export default {
 }
 
 i.material-icons {
-  line-height: 10vw;
   vertical-align: bottom;
   user-select: none;
+}
+
+.small-material-icons {
+  color: grey;
+  line-height: 1;
+  font-size: 2.4vw;
 }
 
 body {
   margin: 0;
 }
+
 #app {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.selectable {
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -149,10 +166,9 @@ body {
 }
 
 #app-launcher {
-  display: grid;
   position: absolute;
-  width: 84.5vw;
-  height: 80%;
+  width: fit-content;
+  height: 80vh;
   box-shadow: 5px 5px 5px rgba(128,128,128,0.5);
   z-index: 20;
   margin: auto;
@@ -161,8 +177,21 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  overflow-y: scroll;
-  grid-template-columns: repeat(auto-fill, 14vw);
+}
+
+#launcher-nav {
+  width: 100%;
+  height: 6vh;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.5);
+}
+
+#app-view {
+  display: grid;
+  height: 74vh;
+  
+  overflow-y: auto;
+  grid-template-columns: repeat(5, 14vw);
+  grid-template-rows: repeat(auto-fill, 14vw);
 }
 
 #nav-bar {

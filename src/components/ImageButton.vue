@@ -25,6 +25,7 @@ export default {
     opacity: 0.8;
     background: inherit;
     transition: all .15s ease-in-out;
+    
 }
 
 #icon-button:hover {
