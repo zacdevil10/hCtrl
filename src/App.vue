@@ -2,6 +2,39 @@
   <div id="app">
     <Background/>
     <ClockWidget id="clock"/>
+    
+    <div id="launcher-container" @click="openLauncher = false" v-show="openLauncher">
+      <div id="app-launcher" ref="appLauncher" @click.stop="stopPropagation">
+        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+        <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+      </div>
+    </div>
 
     <div id="nav-bar">
       <ImageButtonWidget icon="wb_sunny" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
@@ -9,7 +42,7 @@
       <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
       <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
       <ImageButtonWidget icon="highlight" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
-      <ImageButtonWidget icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
+      <ImageButtonWidget @click.native="openLauncher = true" icon="dashboard" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
       <ImageButtonWidget icon="settings" :width='buttonWidth' :height='buttonHeight' :tint='buttonColor' />
     </div>
   </div>
@@ -25,13 +58,15 @@ export default {
   components: {
     Background,
     ClockWidget,
-    ImageButtonWidget
+    ImageButtonWidget,
+    stopPropagation: (event) => event.stopPropagation()
   },
   data() {
     return {
       buttonColor: 'rgba(128,128,128,0.5)',
-      buttonWidth: '150',
-      buttonHeight: '150'
+      buttonWidth: '10vw',
+      buttonHeight: '10vw',
+      openLauncher: false
     }
   }
 }
@@ -49,7 +84,7 @@ export default {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 120px;
+  font-size: 7vw;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -63,8 +98,9 @@ export default {
 }
 
 i.material-icons {
-  line-height: 150px;
+  line-height: 10vw;
   vertical-align: bottom;
+  user-select: none;
 }
 
 body {
@@ -77,11 +113,56 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(189, 189, 189);
+  transition: all .15s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(170, 170, 170);
+  transition: all .15s ease-in-out;
+}
 </style>
 
 <style scoped>
 #clock {
   padding-top: 30vh;
+}
+
+#launcher-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#app-launcher {
+  display: grid;
+  position: absolute;
+  width: 84.5vw;
+  height: 80%;
+  box-shadow: 5px 5px 5px rgba(128,128,128,0.5);
+  z-index: 20;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  grid-template-columns: repeat(auto-fill, 14vw);
 }
 
 #nav-bar {

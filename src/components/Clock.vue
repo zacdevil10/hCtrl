@@ -42,6 +42,7 @@ p {
     padding: 0;
     margin: 0;
 }
+
 #clock {
     color: white;
     text-align: center;
